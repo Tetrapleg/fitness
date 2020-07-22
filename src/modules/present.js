@@ -1,7 +1,7 @@
-const callBackPopup = () => {
-  const callBack = document.querySelector('.callback-btn'),
-        popup = document.getElementById('callback_form'),
-        popupContent = document.querySelector('.form__wrapper-callback');
+const present = () => {
+  const fixedGift = document.querySelector('.fixed-gift'),
+        popup = document.getElementById('gift'),
+        popupContent = document.querySelector('.form__wrapper-gift');
 
   let requesInterval,
   count = 280;
@@ -33,7 +33,7 @@ const callBackPopup = () => {
 
 
   
-  callBack.addEventListener('click', () => {
+  fixedGift.addEventListener('click', () => {
     if(document.documentElement.scrollWidth > 768){
       popup.style.display = 'block';
       requestAnimationFrame(popupOnAnimate);
@@ -41,12 +41,13 @@ const callBackPopup = () => {
       popupContent.style.transform = `translateX(0)`;
       popup.style.display = 'block';
     }
+    fixedGift.style.display = 'none';
   });
 
   popup.addEventListener('click', (event) =>{
     let target = event.target;
 
-    if(target.classList.contains('close_icon')){
+    if(target.classList.contains('close_icon') || target.classList.contains('close-btn')){
       if(document.documentElement.scrollWidth > 768){
         requestAnimationFrame(popupOffAnimate);
       }else{
@@ -65,4 +66,8 @@ const callBackPopup = () => {
   });
 };
 
-export default callBackPopup;
+export default present;
+
+/*При клике на подарок http://joxi.ru/Y2LJLvvU7XjK8r
+
+должно появляться модальное окно (id="gift") и сам подарок полностью исчезает со страницы. При нажатии на крестик или подложку окно исчезает.*/

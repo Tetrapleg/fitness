@@ -1,7 +1,7 @@
-const callBackPopup = () => {
-  const callBack = document.querySelector('.callback-btn'),
-        popup = document.getElementById('callback_form'),
-        popupContent = document.querySelector('.form__wrapper-callback');
+const modalOne = () => {
+    const openPopup = document.querySelector('.open-popup'),
+        popup = document.getElementById('free_visit_form'),
+        popupContent = document.querySelector('.form__wrapper-free');
 
   let requesInterval,
   count = 280;
@@ -33,7 +33,7 @@ const callBackPopup = () => {
 
 
   
-  callBack.addEventListener('click', () => {
+  openPopup.addEventListener('click', () => {
     if(document.documentElement.scrollWidth > 768){
       popup.style.display = 'block';
       requestAnimationFrame(popupOnAnimate);
@@ -65,4 +65,4 @@ const callBackPopup = () => {
   });
 };
 
-export default callBackPopup;
+export default modalOne;

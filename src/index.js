@@ -10,9 +10,15 @@ import 'es6-promise';
 import burger from './modules/burger';
 import dropdownMenu from './modules/dropdownMenu';
 import callBackPopup from './modules/callBackPopup';
+import present from './modules/present';
+import arrowUp from './modules/arrowUp';
+import modalOne from './modules/modalOne';
 import sendForm from './modules/sendForm';
 
 burger();
 dropdownMenu();
 callBackPopup();
+present();
+arrowUp();
+modalOne();
 sendForm();
