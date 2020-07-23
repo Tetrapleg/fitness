@@ -1,12 +1,12 @@
 const arrowUp = () => {
   const totop = document.getElementById('totop'),
-        clubs = document.getElementById('clubs');
+        headSlider = document.querySelector('.head-slider');
 
   totop.style.display = 'none';
 
   document.addEventListener('scroll', () => {
-    console.log(clubs.getBoundingClientRect().top);
-    if (clubs.getBoundingClientRect().top <= 0){
+
+    if (headSlider.getBoundingClientRect().bottom <= 0){
       totop.style.display = 'block';
     } else {
       totop.style.display = 'none';

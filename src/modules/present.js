@@ -3,6 +3,9 @@ const present = () => {
         popup = document.getElementById('gift'),
         popupContent = document.querySelector('.form__wrapper-gift');
 
+  if (!fixedGift){
+    return;
+  }
   let requesInterval,
   count = 280;
       
