@@ -13,6 +13,7 @@ import callBackPopup from './modules/callBackPopup';
 import present from './modules/present';
 import arrowUp from './modules/arrowUp';
 import modalOne from './modules/modalOne';
+import mainSlider from './modules/mainSlider';
 import sendForm from './modules/sendForm';
 
 burger();
@@ -21,4 +22,5 @@ callBackPopup();
 present();
 arrowUp();
 modalOne();
+mainSlider();
 sendForm();
