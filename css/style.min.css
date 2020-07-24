@@ -1571,15 +1571,15 @@ nav.popup-menu .close-menu-btn img {
   margin: 0 auto
 }
 
-.services-slider .slider-arrow {
+.wrapper .slider-arrow {
   position: absolute;
-  top: 75px;
+  top: 50%;
   margin-top: -18px;
   z-index: 100;
   cursor: pointer
 }
 
-.services-slider .slider-arrow span {
+.wrapper .slider-arrow span {
   display: block;
   width: 36px;
   height: 37px;
@@ -1589,11 +1589,11 @@ nav.popup-menu .close-menu-btn img {
   padding-top: 11px
 }
 
-.services-slider .slider-arrow.prev {
+.wrapper .slider-arrow.prev {
   left: 2px
 }
 
-.services-slider .slider-arrow.next {
+.wrapper .slider-arrow.next {
   right: 2px
 }
 
@@ -1642,6 +1642,14 @@ nav.popup-menu .close-menu-btn img {
 
 #gallery .gallery-slider .slider-arrow.next {
   right: 0
+}
+
+.fa-arrow-right::before {
+  content: "\f061";
+}
+
+.fa-arrow-left::before {
+  content: "\f060";
 }
 
 #gallery .gallery-slider .slider-dots {

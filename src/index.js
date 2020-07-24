@@ -14,6 +14,8 @@ import present from './modules/present';
 import arrowUp from './modules/arrowUp';
 import modalOne from './modules/modalOne';
 import mainSlider from './modules/mainSlider';
+import photoGallery from './modules/photoGallery';
+import carousel from './modules/carousel';
 import sendForm from './modules/sendForm';
 
 burger();
@@ -23,4 +25,6 @@ present();
 arrowUp();
 modalOne();
 mainSlider();
+photoGallery();
+carousel();
 sendForm();

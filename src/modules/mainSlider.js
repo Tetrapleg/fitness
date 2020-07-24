@@ -1,7 +1,6 @@
 const mainSlider = () => {
     const slider = document.querySelector('.main-slider'),
           slide = slider.querySelectorAll('.slide');
-        ;
 
   let currentSlide = 0,
       dot,
@@ -94,7 +93,7 @@ const mainSlider = () => {
     let ul = document.createElement('ul');
     ul.classList.add('slider-dots');
     slider.append(ul);
-    const dots = document.querySelector('.slider-dots');
+    const dots = slider.querySelector('.slider-dots');
 
     for(let i = 0; i < slide.length; i++){
       let li = document.createElement('li'),
@@ -105,7 +104,7 @@ const mainSlider = () => {
       dots.append(li);
     }
 
-    dot = document.querySelectorAll('.dot');
+    dot = slider.querySelectorAll('.dot');
     
     startSlide();
 
