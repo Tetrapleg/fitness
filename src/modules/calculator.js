@@ -41,26 +41,17 @@ const calculator = () => {
         discount = 0.7;
       }
     }
-    if (check.id === 'm1'){
-      summary = period[`month${check.value}`][index] * discount;
-      printSummary();
-    } else if (check.id === 'm2'){
-      summary = period[`month${check.value}`][index] * discount;
-      printSummary();
-    } else if (check.id === 'm3'){
-      summary = period[`month${check.value}`][index] * discount;
-      printSummary();
-    } else if (check.id === 'm4'){
-      summary = period[`month${check.value}`][index] * discount;
-      printSummary();
-    }
+
+    summary = period[`month${check.value}`][index] * discount;
+    printSummary();
   };
 
   const calcDiscont = () => {
+    discount = 1;
     if (promo.value.trim().toUpperCase() === 'ТЕЛО2019'){
       discount = 0.7;
     }
-    summary = priceTotal.textContent * discount;
+    summary = period[`month${periodCard}`][indexArr] * discount;
     printSummary();
   };
 
