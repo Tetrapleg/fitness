@@ -4,16 +4,16 @@ const modalOne = () => {
         popupContent = document.querySelector('.form__wrapper-free');
 
   let requesInterval,
-  count = 280;
-      
-  popupContent.style.transform = `translateX(-280%)`;
+  count = 0;
 
+  popupContent.style.transform = `translateX(-280%)`;
+      
   const popupOnAnimate = () => {
 
-  count -= 10;
-  if(count >= 0 ){
+  count += 10;
+  if(count <= 280 ){
       requesInterval = requestAnimationFrame(popupOnAnimate);
-      popupContent.style.transform = `translateX(-${count}%)`;
+      popupContent.style.transform = `translateX(-${280 - count}%)`;
     }else{
       cancelAnimationFrame(requesInterval);
     }
@@ -30,10 +30,10 @@ const modalOne = () => {
       popup.style.display = 'none';
     }
   };
-
-
   
   openPopup.addEventListener('click', () => {
+    cancelAnimationFrame(requesInterval);
+    count = 0;
     if(document.documentElement.scrollWidth > 768){
       popup.style.display = 'block';
       requestAnimationFrame(popupOnAnimate);
@@ -44,7 +44,10 @@ const modalOne = () => {
   });
 
   popup.addEventListener('click', (event) =>{
+    cancelAnimationFrame(requesInterval);
+    count = 0;
     let target = event.target;
+    
 
     if(target.classList.contains('close_icon')){
       if(document.documentElement.scrollWidth > 768){

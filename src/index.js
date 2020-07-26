@@ -6,6 +6,9 @@ import elementClosest from 'element-closest';
 elementClosest(window);
 import 'formdata-polyfill';
 import 'es6-promise';
+import 'es6-promise';
+import 'fetch-polyfill';
+import 'mdn-polyfills/Node.prototype.append';
 
 import burger from './modules/burger';
 import dropdownMenu from './modules/dropdownMenu';
@@ -18,6 +21,7 @@ import photoGallery from './modules/photoGallery';
 import carousel from './modules/carousel';
 import calculator from './modules/calculator';
 import sendForm from './modules/sendForm';
+import mascPhoneName from './modules/mascPhoneName';
 
 burger();
 dropdownMenu();
@@ -30,3 +34,4 @@ photoGallery();
 carousel();
 calculator();
 sendForm();
+mascPhoneName();

@@ -1,19 +1,23 @@
 
 const calculator = () => {
 
-  const cardType = document.querySelectorAll('.time>input'),
-        cardWrap = document.getElementById('card_order'),
-        promo = document.querySelector('[placeholder="Промокод"]'),
-        priceTotal = document.getElementById('price-total'),
-        cardLetoMozaika = document.getElementById('card_leto_mozaika'),
-        cardLetoSchelkovo = document.getElementById('card_leto_schelkovo'),
+  const cardWrap = document.querySelector('.calculated-card');
+
+  if (!cardWrap){
+    return;
+  }
+  const cardType = cardWrap.querySelectorAll('.time>input'),
+        promo = cardWrap.querySelector('[placeholder="Промокод"]'),
+        priceTotal = cardWrap.querySelector('#price-total'),
+        cardLetoMozaika = cardWrap.querySelector('#card_leto_mozaika'),
+        cardLetoSchelkovo = cardWrap.querySelector('#card_leto_schelkovo'),
         period = {
           month1: [1999, 2999],
           month6: [9900, 14990],
           month9: [13900, 21990],
           month12: [19900, 24990]
         };
-
+        
   let discount = 1,
       summary = 1999,
       periodCard = 1,

@@ -1,5 +1,3 @@
-import arrowUp from "./arrowUp";
-
 const photoGallery = () => {
   const galleryWrapper = document.querySelector('.gallery-bg .wrapper'),
         gallerySlider = document.querySelector('.gallery-slider'),
