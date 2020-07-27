@@ -9,6 +9,7 @@ import 'es6-promise';
 import 'es6-promise';
 import 'fetch-polyfill';
 import 'mdn-polyfills/Node.prototype.append';
+import 'mdn-polyfills/Node.prototype.remove';
 
 import burger from './modules/burger';
 import dropdownMenu from './modules/dropdownMenu';

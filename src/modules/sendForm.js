@@ -6,7 +6,8 @@ const sendForm = () => {
   let form,
       promoCode = false,
       requesInterval,
-      count = 0;
+      count = 0,
+      checkboxClubPerson = '';
   
   const statusMessage = document.createElement('div');
   statusMessage.style.cssText = 'font-size: 2rem; color: #ffd11a';
@@ -81,6 +82,33 @@ const sendForm = () => {
     form.id === 'form1' || form.id === 'form2' ? closePopup() : openThanks();
   };
 
+  const choiseClub = (message) => {
+    if (checkboxClubPerson === 'club'){
+      const chooseClub = form.querySelector('.choose-club');
+      if (chooseClub.children.length > 3){
+        chooseClub.children[3].remove();
+      }
+      if (message){
+        const messH3 = document.createElement('h3');
+        messH3.style.color = 'red';
+        messH3.textContent = message;
+        chooseClub.append(messH3);
+      }
+    } else if (checkboxClubPerson === 'personal-data'){
+      const personalData = form.querySelector('.personal-data');
+      if (personalData.children.length > 2){
+        personalData.children[2].remove();
+      }
+      if (message){
+        const messH3 = document.createElement('h3');
+        messH3.style.color = 'red';
+        messH3.textContent = message;
+        personalData.append(messH3);
+      }
+    }
+
+  };
+
   const sendFormData = (elementsForm) => {
 
     form.appendChild(statusMessage);
@@ -109,6 +137,7 @@ const sendForm = () => {
       body[key] = val;
     });
     form.reset();
+    choiseClub();
     elementsForm.forEach( elem => {
       elem.style.border = '';
       elem.style.boxShadow = '';
@@ -188,11 +217,13 @@ const sendForm = () => {
 
     if(count === elementsForm.length){
       if (!elementsFormClub.length && choiceClub){
-        alert('Выберите клуб');
+        checkboxClubPerson = 'club';
+        choiseClub('НЕОБХОДИМО ВЫБРАТЬ КЛУБ');
         return;
       } else {
         if (!checkBox){
-          alert('Нужно разрешить обработку данных');
+          checkboxClubPerson = 'personal-data';
+          choiseClub('НЕОБХОДИМО ДАТЬ СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ');
           return;
         } else {
           elemFormToSend.push([...elementsForm, ...elementsFormCard, ...elementsFormClub, `promoCode: ${promoCode}`]);
@@ -225,8 +256,17 @@ const sendForm = () => {
     }
   });
 
-  document.body.addEventListener('click', event => {
+  document.body.addEventListener('change', event => {
+    const target = event.target;
+    if (target.type === 'radio' && target.name === 'club-name'){
+      choiseClub();
+    }
+    if (target.type === 'checkbox'){
+      choiseClub();
+    }
+  });
 
+  document.body.addEventListener('click', event => {
     const target = event.target;
     if (target.type && target.type.toLowerCase() === 'submit' && target.closest('form')){
       form = target.closest('form');
