@@ -23,6 +23,7 @@ import carousel from './modules/carousel';
 import calculator from './modules/calculator';
 import sendForm from './modules/sendForm';
 import mascPhoneName from './modules/mascPhoneName';
+import slowScroll from './modules/slowScroll';
 
 burger();
 dropdownMenu();
@@ -36,3 +37,4 @@ carousel();
 calculator();
 sendForm();
 mascPhoneName();
+slowScroll();
